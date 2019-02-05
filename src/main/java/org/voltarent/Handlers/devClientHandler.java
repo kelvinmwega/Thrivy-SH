@@ -35,7 +35,7 @@ public class devClientHandler {
 
         try {
             JsonObject resp = reqHandler.post(String.format("%s%s%s", deviceDBbaseUrl, emdDB, "_find"),
-                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 0).toString());
+                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 0, "").toString());
             return resp;
         } catch (Exception e) {
             err.addProperty("error", "So many things could be wrong at this point.");
@@ -46,7 +46,7 @@ public class devClientHandler {
     public JsonObject latestEmdData(JsonObject reqData){
         try {
             JsonObject resp = reqHandler.post(String.format("%s%s%s", deviceDBbaseUrl, emdDB, "_find"),
-                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 1).toString());
+                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 1, "").toString());
             return resp;
         } catch (Exception e) {
             err.addProperty("error", "So many things could be wrong at this point.");
@@ -57,7 +57,7 @@ public class devClientHandler {
     public JsonObject latestLevelData(JsonObject reqData){
         try {
             JsonObject resp = reqHandler.post(String.format("%s%s%s", deviceDBbaseUrl, lmDB, "_find"),
-                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 1).toString());
+                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 1, "").toString());
             return resp;
         } catch (Exception e) {
             err.addProperty("error", "So many things could be wrong at this point.");
@@ -65,7 +65,54 @@ public class devClientHandler {
         }
     }
 
-    public JsonObject queryObjGen(JsonObject reqData, int lim) {
+    public JsonObject latestWifiData(JsonObject reqData){
+        try {
+            JsonObject resp = reqHandler.post(String.format("%s%s%s", deviceDBbaseUrl, emdwifiDB, "_find"),
+                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 1, "").toString());
+            return resp;
+        } catch (Exception e) {
+            err.addProperty("error", "So many things could be wrong at this point.");
+            return err;
+        }
+    }
+
+    public JsonObject getEMDWifiData(JsonObject reqData){
+        try {
+            JsonObject resp = reqHandler.post(String.format("%s%s%s", deviceDBbaseUrl, emdwifiDB, "_find"),
+                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 0, "").toString());
+            return resp;
+        } catch (Exception e) {
+            err.addProperty("error", "So many things could be wrong at this point.");
+            return err;
+        }
+    }
+
+
+    public JsonObject levelData(JsonObject reqData){
+        try {
+            JsonObject resp = reqHandler.post(String.format("%s%s%s", deviceDBbaseUrl, lmDB, "_find"),
+                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 0, "").toString());
+            return resp;
+        } catch (Exception e) {
+            err.addProperty("error", "So many things could be wrong at this point.");
+            return err;
+        }
+    }
+
+    public JsonObject emdEvents(JsonObject reqData){
+        try {
+            JsonObject resp = reqHandler.post(String.format("%s%s%s", deviceDBbaseUrl, emdDB, "_find"),
+                    enc.base44En(deviceDBUser, deviceDBPass), queryObjGen(reqData, 0, "events").toString());
+            return resp;
+        } catch (Exception e) {
+            err.addProperty("error", "So many things could be wrong at this point.");
+            return err;
+        }
+    }
+
+    public JsonObject queryObjGen(JsonObject reqData, int lim, String qry) {
+
+        System.out.println("### " + reqData);
 
         JsonObject postDataParams = new JsonObject();
         JsonObject selector = new JsonObject();
@@ -79,6 +126,11 @@ public class devClientHandler {
         timestamp.addProperty("$lt", reqData.get("startTime").getAsString());
         selector.add("timestamp", new Gson().toJsonTree(timestamp));
         selector.addProperty("deviceid", reqData.get("device").getAsString());
+
+        if (qry.equals("events")){
+            selector.addProperty("msgtype", reqData.get("msgtype").getAsString());
+        }
+
         sorter.addProperty("timestamp", "desc");
         sort.add(sorter);
 
@@ -89,7 +141,7 @@ public class devClientHandler {
             postDataParams.addProperty("limit", lim);
         }
 
-//            System.out.println(postDataParams.toString());
+            System.out.println(postDataParams.toString());
         return postDataParams;
 
     }

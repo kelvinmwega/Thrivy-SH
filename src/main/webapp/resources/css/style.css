@@ -509,6 +509,7 @@ ul.notika-menu-wrap li a{
 	padding:20px;
 	background:#fff;
 	display:flex;
+    height: 160px;
 }
 .website-traffic-ctn h2, .curved-ctn h2, .past-day-statis h2, .email-ctn-round h2, .recent-post-title h2, .recent-items-title h2, .realtime-title h2, .contact-hd h2, .animation-ctn-hd h2, .alert-hd h2, .color-hd h2, .tab-hd h2, .wizard-hd h2, .dropdown-trig-hd h2, .modals-hd h2, .accordion-hd h2, .tooltips-hd h2, .popovers-hd h2, .typography-list h2, .typography-heading h2, .typography-in-hd h2, .tpgp-hp-hd h2, .view-mail-hrd h2, .multiupload-sys h2, .basic-tb-hd h2{
 	font-size:20px;
@@ -4631,3 +4632,4 @@ body.box-layout {
 /*----------------------------------------*/
 .mCS-light-1.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #00B1BD; }
 .mCS-light-1.mCSB_scrollTools .mCSB_draggerRail{ background-color: #ccc; }
+

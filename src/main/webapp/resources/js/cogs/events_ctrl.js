@@ -66,7 +66,7 @@ function processPowerData(data){
 
     var powerstat;
 
-    if (data.docs[0].payload.data.power === '1'){
+    if (data.docs[0].power === '1'){
         powerstat = "ON";
     } else {
         powerstat = "OFF";
@@ -79,7 +79,7 @@ function processPowerData(data){
 
         var powerstatus;
 
-        if (data.docs[i].payload.data.power === '1'){
+        if (data.docs[i].power === '1'){
             powerstatus = "ON";
             tr = $("<tr class='active'" + " id=" + data.docs[i]._id + "/>");
         } else {
@@ -87,10 +87,10 @@ function processPowerData(data){
             tr = $("<tr class='info'" + " id=" + data.docs[i]._id + "/>");
         }
 
-        tr.append("<td class='text-center'>" + data.docs[i].deviceId + "</td>");
+        tr.append("<td class='text-center'>" + data.docs[i].deviceid + "</td>");
         //tr.append("<td class='text-center'>" + data.docs[i].msgtype + "</span></td>");
         tr.append("<td class='text-center'>" + powerstatus + "</span></td>");
-        tr.append("<td class='text-center'>" + data.docs[i].payload.data.powercnt + "</span></td>");
+        tr.append("<td class='text-center'>" + data.docs[i].powercnt + "</span></td>");
         tr.append("<td class='text-center'>" + new Date(data.docs[i].timestamp).toLocaleString() + "</td>");
         //tr.append("<td class='text-center'>" + new Date(data.docs[i].timestamp).toLocaleString() + "</td>");
 
@@ -105,7 +105,7 @@ function processDoorData(data){
 
     $("#eventsTableBody").empty();
 
-    if (data.docs[0].payload.data.door === '0'){
+    if (data.docs[0].door === '0'){
         doorstat = "Closed";
     } else {
         doorstat = "Opened";
@@ -118,7 +118,7 @@ function processDoorData(data){
 
         var doorstatus;
 
-        if (data.docs[i].payload.data.door === '0'){
+        if (data.docs[i].door === '0'){
             doorstatus = "Close";
             tr = $("<tr class='active'" + " id=" + data.docs[i]._id + "/>");
         } else {
@@ -126,10 +126,10 @@ function processDoorData(data){
             tr = $("<tr class='info'" + " id=" + data.docs[i]._id + "/>");
         }
 
-        tr.append("<td class='text-center'>" + data.docs[i].deviceId + "</td>");
+        tr.append("<td class='text-center'>" + data.docs[i].deviceid + "</td>");
         //tr.append("<td class='text-center'>" + data.docs[i].msgtype + "</span></td>");
         tr.append("<td class='text-center'>" + doorstatus + "</span></td>");
-        tr.append("<td class='text-center'>" + data.docs[i].payload.data.doorcnt + "</span></td>");
+        tr.append("<td class='text-center'>" + data.docs[i].doorcnt + "</span></td>");
         tr.append("<td class='text-center'>" + new Date(data.docs[i].timestamp).toLocaleString() + "</td>");
         //tr.append("<td class='text-center'>" + new Date(data.docs[i].timestamp).toLocaleString() + "</td>");
 

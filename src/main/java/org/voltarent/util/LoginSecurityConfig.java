@@ -28,11 +28,11 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/homepage", "/tankpage", "/analytics", "/events")
+                .antMatchers( "/dashpage", "/livingpage", "/master", "/wl_hist", "/lr_hist", "mb_hist", "/events")
                 .access("hasRole('ROLE_USER')")
                 .and()
                 .formLogin().loginPage("/loginPage")
-                .defaultSuccessUrl("/homepage")
+                .defaultSuccessUrl("/dashpage")
                 .failureUrl("/loginPage?error")
                 .usernameParameter("username").passwordParameter("password")
                 .and()

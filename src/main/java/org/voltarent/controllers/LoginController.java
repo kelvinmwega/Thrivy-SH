@@ -28,6 +28,42 @@ public class LoginController {
         return "homepage";
     }
 
+    @RequestMapping(value = { "/dashpage"}, method = RequestMethod.GET)
+    public String dashPage() {
+//        ModelAndView model = new ModelAndView();
+//        model.setViewName("homepage");
+        return "dashpage";
+    }
+
+    @RequestMapping(value = { "/livingpage"}, method = RequestMethod.GET)
+    public String livingPage() {
+//        ModelAndView model = new ModelAndView();
+//        model.setViewName("homepage");
+        return "livingpage";
+    }
+
+    @RequestMapping(value = { "/master"}, method = RequestMethod.GET)
+    public String masterPage() {
+//        ModelAndView model = new ModelAndView();
+//        model.setViewName("homepage");
+        return "master_room";
+    }
+
+    @RequestMapping(value = { "/wl_hist"}, method = RequestMethod.GET)
+    public String wl_hist_Page() {
+        return "wl-history";
+    }
+
+    @RequestMapping(value = { "/lr_hist"}, method = RequestMethod.GET)
+    public String lr_hist_Page() {
+        return "lr-history";
+    }
+
+    @RequestMapping(value = { "/mb_hist"}, method = RequestMethod.GET)
+    public String mb_hist_Page() {
+        return "mb-history";
+    }
+
     @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
     public ModelAndView loginPage(@RequestParam(value = "error",required = false) String error,
                                   @RequestParam(value = "logout",	required = false) String logout) {
@@ -38,7 +74,7 @@ public class LoginController {
         }
 
         if (logout != null) {
-            model.addObject("message", "Logged out from Thrivy Facilities Successfully.");
+            model.addObject("message", "Logged out Successfully.");
         }
 
         model.setViewName("loginPage");
@@ -63,6 +99,13 @@ public class LoginController {
     public ModelAndView tankPage() {
         ModelAndView model = new ModelAndView();
         model.setViewName("tankpage");
+        return model;
+    }
+
+    @RequestMapping(value = { "/landingpage"}, method = RequestMethod.GET)
+    public ModelAndView landingPage() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("landingpage");
         return model;
     }
 

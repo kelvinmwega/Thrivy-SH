@@ -17,7 +17,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Living Room | Thrivy Facilities</title>
+    <title>Demo EMD | Voltarent Eng</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -86,7 +86,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="logo-area">
-                    <a href="${pageContext.servletContext.contextPath}/homepage"><img src="${pageContext.servletContext.contextPath}/resources/img/logo/symphony_logo.png" alt="Smiley face" height="63" width="100" /></a>
+                    <a href="${pageContext.servletContext.contextPath}/homepage"><img src="${pageContext.servletContext.contextPath}/resources/img/logo/symphony_logo.png" alt="Smiley face" height="100" width="140" /></a>
                 </div>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -186,8 +186,8 @@
                         <ul class="mobile-menu-nav">
                             <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
                                 <ul class="collapse dropdown-header-top">
-                                    <li><a href="${pageContext.servletContext.contextPath}/homepage">Living Room</a></li>
-                                    <li><a href="${pageContext.servletContext.contextPath}/tankpage">Water Tank</a></li>
+                                    <li><a href="${pageContext.servletContext.contextPath}/homepage">Home</a></li>
+                                    <%--<li><a href="${pageContext.servletContext.contextPath}/tankpage">Water Tank</a></li>--%>
                                     <li><a href="${pageContext.servletContext.contextPath}/analytics">Analytics</a></li>
                                     <li><a href="${pageContext.servletContext.contextPath}/events">Events</a></li>
                                 </ul>
@@ -221,10 +221,10 @@
                 <div class="tab-content custom-menu-content">
                     <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
                         <ul class="notika-main-menu-dropdown">
-                            <li><a href="${pageContext.servletContext.contextPath}/homepage">Living Room</a>
+                            <li><a href="${pageContext.servletContext.contextPath}/homepage">Home</a>
                             </li>
-                            <li><a href="${pageContext.servletContext.contextPath}/tankpage">Water Tank</a>
-                            </li>
+                            <%--<li><a href="${pageContext.servletContext.contextPath}/tankpage">Water Tank</a>--%>
+                            <%--</li>--%>
                             <li><a href="${pageContext.servletContext.contextPath}/analytics">Analytics</a>
                             </li>
                             <li><a href="${pageContext.servletContext.contextPath}/events">Events</a>
@@ -260,8 +260,8 @@
                                     <i class="notika-icon notika-house"></i>
                                 </div>
                                 <div class="breadcomb-ctn">
-                                    <h2>Living Room Area</h2>
-                                    <p>Living Room Area Environment Conditions, Door and Power Status..</p>
+                                    <h2>Demo Environment Monitoring Device</h2>
+                                    <p>Environment Conditions, Door and Power Status..</p>
                                 </div>
                             </div>
                         </div>
