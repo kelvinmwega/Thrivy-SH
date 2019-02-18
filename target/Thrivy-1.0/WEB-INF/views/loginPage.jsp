@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard | Thrivy Facilites</title>
+    <title>Thrivy Facilites</title>
     <meta name="Thrivy Facilites" content="Bringing Life to Your Home.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon

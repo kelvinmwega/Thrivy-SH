@@ -64,6 +64,26 @@ public class LoginController {
         return "mb-history";
     }
 
+    @RequestMapping(value = { "/kitchen"}, method = RequestMethod.GET)
+    public String Kitchen_Page() {
+        return "kitchen";
+    }
+
+    @RequestMapping(value = { "/kt_hist"}, method = RequestMethod.GET)
+    public String kn_hist_Page() {
+        return "kn-history";
+    }
+
+    @RequestMapping(value = { "/tracker"}, method = RequestMethod.GET)
+    public String tracker_Page() {
+        return "tracker";
+    }
+
+    @RequestMapping(value = { "/tracker_hist"}, method = RequestMethod.GET)
+    public String tracker_hist_Page() {
+        return "tracker_history";
+    }
+
     @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
     public ModelAndView loginPage(@RequestParam(value = "error",required = false) String error,
                                   @RequestParam(value = "logout",	required = false) String logout) {

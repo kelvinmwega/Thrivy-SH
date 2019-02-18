@@ -152,12 +152,12 @@ function processDevData(data){
         errorArray.push(0);
     } finally {
 
-    }
+        loadTempLevel(labelsArray, tempArray);
+        loadLightLevel(labelsArray, heightArray);
+        loadBatteryLevel(labelsArray, batteryArray);
+        loadHumidityLevel(labelsArray, humArray);
 
-    loadTempLevel(labelsArray, tempArray);
-    loadLightLevel(labelsArray, heightArray);
-    loadBatteryLevel(labelsArray, batteryArray);
-    loadHumidityLevel(labelsArray, humArray);
+    }
 }
 
 function loadTempLevel(labelsArray, heightArray){

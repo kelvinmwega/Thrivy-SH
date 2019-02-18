@@ -184,6 +184,7 @@
                             <li><a href="${pageContext.servletContext.contextPath}/livingpage">Living Room</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/master">Master Bedroom</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/kitchen">Kitchen</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/tracker">My Car</a></li>
                         </ul>
                     </div>
                     <div id="mailbox" class="tab-pane active notika-tab-menu-bg animated flipInX">
@@ -192,6 +193,7 @@
                             <li><a href="">Living Room</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/mb_hist">Master Bedroom</a></li>
                             <li><a href="${pageContext.servletContext.contextPath}/kt_hist">Kitchen</a></li>
+                            <li><a href="${pageContext.servletContext.contextPath}/tracker_hist">My Car</a></li>
                         </ul>
                     </div>
                     <div id="Interface" class="tab-pane notika-tab-menu-bg animated flipInX">

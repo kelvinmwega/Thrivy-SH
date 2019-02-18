@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.voltarent.Handlers.cloudantHandler;
 import org.voltarent.Handlers.devClientHandler;
 import org.voltarent.Handlers.parkDevClient;
+import org.voltarent.Handlers.thrivyClientHandler;
 
 /**
  * Created by KelvinMwegaKiana on 07/11/2018.
@@ -18,6 +19,7 @@ public class RestControllers {
     private JsonParser parser = new JsonParser();
     private parkDevClient parkClient = new parkDevClient();
     private devClientHandler clientHandler = new devClientHandler();
+    private thrivyClientHandler thrivyHandler = new thrivyClientHandler();
 
     @CrossOrigin
     @RequestMapping(value = "/getDevices",  method = RequestMethod.POST)
@@ -80,6 +82,38 @@ public class RestControllers {
 
         JsonObject req = parser.parse(data.trim()).getAsJsonObject();
         return new ResponseEntity<JsonObject>(clientHandler.emdEvents(req), HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/getLoraEMDData",  method = RequestMethod.POST)
+    public ResponseEntity<JsonObject> getLoraEMDData(@RequestBody String data) throws Exception{
+
+        JsonObject req = parser.parse(data.trim()).getAsJsonObject();
+        return new ResponseEntity<JsonObject>(thrivyHandler.loraemdData(req), HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/getRecentLoraEMDData",  method = RequestMethod.POST)
+    public ResponseEntity<JsonObject> getRecentLoraEMDData(@RequestBody String data) throws Exception{
+
+        JsonObject req = parser.parse(data.trim()).getAsJsonObject();
+        return new ResponseEntity<JsonObject>(thrivyHandler.latestloraEmdData(req), HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/getTrackerEMDData",  method = RequestMethod.POST)
+    public ResponseEntity<JsonObject> getTrackerEMDData(@RequestBody String data) throws Exception{
+
+        JsonObject req = parser.parse(data.trim()).getAsJsonObject();
+        return new ResponseEntity<JsonObject>(thrivyHandler.trackeremdData(req), HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/getRecentTrackerEMDData",  method = RequestMethod.POST)
+    public ResponseEntity<JsonObject> getRecentTrackerEMDData(@RequestBody String data) throws Exception{
+
+        JsonObject req = parser.parse(data.trim()).getAsJsonObject();
+        return new ResponseEntity<JsonObject>(thrivyHandler.latesttrackerEmdData(req), HttpStatus.OK);
     }
 
 }

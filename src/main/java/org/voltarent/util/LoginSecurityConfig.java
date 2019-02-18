@@ -28,7 +28,8 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers( "/dashpage", "/livingpage", "/master", "/wl_hist", "/lr_hist", "mb_hist", "/events")
+                .antMatchers( "/dashpage", "/livingpage", "/master", "/wl_hist",
+                        "/lr_hist", "mb_hist", "/events", "/kitchen", "/kn_hist", "/tracker", "/tracker_hist")
                 .access("hasRole('ROLE_USER')")
                 .and()
                 .formLogin().loginPage("/loginPage")

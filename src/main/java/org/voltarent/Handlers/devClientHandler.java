@@ -141,7 +141,7 @@ public class devClientHandler {
             postDataParams.addProperty("limit", lim);
         }
 
-            System.out.println(postDataParams.toString());
+//            System.out.println(postDataParams.toString());
         return postDataParams;
 
     }

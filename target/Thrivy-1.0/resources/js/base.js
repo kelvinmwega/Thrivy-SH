@@ -292,6 +292,78 @@ var wateropts = {
     }
 };
 
+var speedopts = {
+    angle: 0, /// The span of the gauge arc
+    lineWidth: 0.44, // The line thickness
+    radiusScale: 1,
+    pointer: {
+        length: 0.6, // Relative to gauge radius
+        strokeWidth: 0.035 // The thickness
+    },
+    colorStart: '#6FADCF',   // Colors
+    colorStop: '#8FC0DA',    // just experiment with them
+    strokeColor: '#E0E0E0',  // to see which ones work best for you
+    generateGradient: true,
+    highDpiSupport: true,
+    staticLabels: {
+        font: "12px sans-serif",  // Specifies font
+        labels: [0, 20, 40, 60, 80, 100, 120, 140, 160],  // Print labels at these values
+        color: "#000000",  // Optional: Label text color
+        fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+    },
+    staticZones: [
+        {strokeStyle: "#F03E3E", min: 100, max: 160}, // Red
+        {strokeStyle: "#FFDD00", min: 60, max: 100}, // Yellow
+        {strokeStyle: "#30B32D", min: 0, max: 60}  // Green
+    ],
+    renderTicks: {
+        divisions: 5,
+        divWidth: 1.1,
+        divLength: 0.7,
+        divColor: '#333333',
+        subDivisions: 3,
+        subLength: 0.5,
+        subWidth: 0.6,
+        subColor: '#666666'
+    }
+};
+
+var signalopts = {
+    angle: 0, /// The span of the gauge arc
+    lineWidth: 0.44, // The line thickness
+    radiusScale: 1,
+    pointer: {
+        length: 0.6, // Relative to gauge radius
+        strokeWidth: 0.035 // The thickness
+    },
+    colorStart: '#6FADCF',   // Colors
+    colorStop: '#8FC0DA',    // just experiment with them
+    strokeColor: '#E0E0E0',  // to see which ones work best for you
+    generateGradient: true,
+    highDpiSupport: true,
+    staticLabels: {
+        font: "12px sans-serif",  // Specifies font
+        labels: [0, 10, 20, 30],  // Print labels at these values
+        color: "#000000",  // Optional: Label text color
+        fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+    },
+    staticZones: [
+        {strokeStyle: "#30B32D", min: 25, max: 30}, // Green
+        {strokeStyle: "#FFDD00", min: 15, max: 25}, // Yellow
+        {strokeStyle: "#F03E3E", min: 0, max: 15}  // Red
+    ],
+    renderTicks: {
+        divisions: 5,
+        divWidth: 1.1,
+        divLength: 0.7,
+        divColor: '#333333',
+        subDivisions: 3,
+        subLength: 0.5,
+        subWidth: 0.6,
+        subColor: '#666666'
+    }
+};
+
 
 
 
